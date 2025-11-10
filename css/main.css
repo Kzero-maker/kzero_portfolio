@@ -1,0 +1,460 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none
+}
+
+body{
+    background: -webkit-linear-gradient(180deg, rgb(0, 0, 0), rgb(110, 82, 182), rgb(0, 0, 0));
+}
+
+.header1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    background-color: rgb(0, 0, 0);
+    height: 70px;
+    box-sizing: border-box;
+    position: fixed; /* Шапка всегда сверху */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Чтобы шапка была поверх других элементов */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Тень для красоты */
+}
+
+/* Добавляем отступ для основного контента, чтобы он не скрывался под шапкой */
+.main {
+    padding-top: 70px; /* Такой же как высота шапки */
+}
+
+.buttons__header1{
+    display: flex;
+    gap: 15px; /* Уменьшил расстояние между кнопками */
+}
+
+.button__header1 {
+    font-family: 'Roboto_regular', sans-serif;
+    color: #3498db;
+    padding: 8px 18px; /* Уменьшил размер отступов */
+    border-radius: 6px; /* Чуть меньше скругление */
+    transition: all 0.3s ease;
+    font-size: 14px; /* Уменьшил размер текста */
+    font-weight: 500;
+    background: transparent;
+    border: 1.5px solid #3498db; /* Более тонкая граница */
+    position: relative;
+    overflow: hidden;
+}
+
+.button__header1:hover {
+    color: white;
+    transform: translateY(-1px); /* Меньшее смещение */
+    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.25); /* Более легкая тень */
+}
+
+.button__header1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #3498db;
+    transition: all 0.3s ease; /* Более быстрая анимация */
+    z-index: -1;
+}
+
+.button__header1:hover::before {
+    width: 100%;
+}
+
+.logo__header1 {
+    font-family: 'Roboto_regular', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+    text-transform: lowercase;
+}
+
+/* Основной контент */
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 30px;
+}
+
+/* Герой секция */
+.hero {
+    text-align: center;
+    padding: 80px 0;
+}
+
+.hero__content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.avatar {
+    margin-bottom: 30px;
+}
+
+.avatar__image {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+}
+
+.avatar__image::after {
+    content: 'KZ';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.hero__title {
+    font-family: 'Roboto_regular', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.hero__subtitle {
+    font-family: 'Roboto_regular', sans-serif;
+    font-size: 20px;
+    color: #3498db;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.hero__description {
+    font-family: 'Roboto_regular', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+}
+
+.skills {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.skill__tag {
+    font-family: 'Roboto_regular', sans-serif;
+    padding: 6px 16px;
+    background: #ecf0f1;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #2c3e50;
+    border: 1px solid #bdc3c7;
+    transition: all 0.3s ease;
+}
+
+.skill__tag:hover {
+    background: #3498db;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Секция "Обо мне" */
+.about {
+    padding: 80px 0;
+}
+
+.about h2 {
+    font-family: 'Roboto_regular', sans-serif;
+    font-size: 36px;
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 50px;
+}
+
+.about__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.about__item {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.about__item:hover {
+    transform: translateY(-5px);
+}
+
+.about__item h3 {
+    font-family: 'Roboto_regular', sans-serif;
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.about__item p {
+    font-family: 'Roboto_regular', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #7f8c8d;
+}
+
+/* Секция философии */
+.philosophy {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.philosophy__header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.philosophy__title {
+    font-family: 'Roboto_regular', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.philosophy__subtitle {
+    font-family: 'Roboto_regular', sans-serif;
+    font-size: 18px;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+/* Цитата */
+.philosophy__quote {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-bottom: 60px;
+    border-left: 4px solid #3498db;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.quote__icon {
+    font-size: 32px;
+    flex-shrink: 0;
+}
+
+.quote__text {
+    font-family: 'Roboto_regular', sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #2c3e50;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Таймлайн */
+.timeline {
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #3498db 0%, #9b59b6 100%);
+}
+
+.timeline__item {
+    display: flex;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.timeline__marker {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border: 3px solid #3498db;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 30px;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.timeline__number {
+    font-family: 'Roboto_regular', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #3498db;
+}
+
+.timeline__content {
+    flex: 1;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.timeline__content:hover {
+    transform: translateY(-5px);
+}
+
+.timeline__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.timeline__title {
+    font-family: 'Roboto_regular', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.timeline__period {
+    font-size: 16px;
+    color: #7f8c8d;
+    font-weight: 400;
+}
+
+.timeline__badge {
+    background: linear-gradient(135deg, #3498db, #9b59b6);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Сетка навыков */
+.skills__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.skill__category h4 {
+    font-family: 'Roboto_regular', sans-serif;
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.skill__category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill__category li {
+    font-family: 'Roboto_regular', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #5a6c7d;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.skill__category li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.timeline__result {
+    font-family: 'Roboto_regular', sans-serif;
+    background: #ecf0f1;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #27ae60;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .philosophy {
+        padding: 60px 0;
+    }
+    
+    .philosophy__title {
+        font-size: 32px;
+    }
+    
+    .philosophy__quote {
+        padding: 25px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .timeline::before {
+        left: 25px;
+    }
+    
+    .timeline__marker {
+        width: 50px;
+        height: 50px;
+        margin-right: 20px;
+    }
+    
+    .skills__grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .timeline__header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
